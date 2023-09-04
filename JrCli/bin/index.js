@@ -7,39 +7,77 @@ const { program } = require('commander');
 const chalk = require('chalk');
 // 引入互动的东西
 const inquirer = require('inquirer');
+// 引入加载的东西
+const ora = require('ora');
+// 引入炫酷字体
+const figlet = require('figlet');
 
-// ============================== 以下是inquirer ====================================
-inquirer
-    .prompt([
-        /* Pass your questions in here */
-        // 放入你的问题
-        {
-            // 默认就是input
-            type: 'input',
-            name: '吃',
-            message: '你吃什么',
-            default: '汉堡'
-        }, {
-            type: 'confirm',
-            name: '辣',
-            message: '吃辣吗?',
-            default: false
-        }
-    ])
-    .then((answers) => {
-        // Use user feedback for... whatever!!
-        console.log(answers);
-    })
-    .catch((error) => {
-        if (error.isTtyError) {
-            // Prompt couldn't be rendered in the current environment
-        } else {
-            // Something else went wrong
-        }
-    });
+
+// ============================== 以下是figlet ====================================
+
+// figlet("Hello World!!", function (err, data) {
+//     // if (err) {
+//     //   console.log("Something went wrong...");
+//     //   console.dir(err);
+//     //   return;
+//     // }
+//     console.log(data);
+//   });
+
+
+
+// // ============================== 以下是ora ====================================
+// const spinner = ora('下载中...').start();
+
+// setTimeout(() => {
+//     spinner.text= '努力加载中, 请稍后...';
+//     spinner.color = 'red';
+// }, 2000);
+
+// setTimeout(() => {
+//     // spinner.succeed('加载完成');
+//     spinner.fail('加载失败');
+// }, 4000);
+
+
+
+// // ============================== 以下是inquirer ====================================
+// inquirer
+//     .prompt([
+//         /* Pass your questions in here */
+//         // 放入你的问题
+//         {
+//             // 默认就是input
+//             type: 'input',
+//             name: '吃',
+//             message: '你吃什么',
+//             default: '汉堡'
+//         }, {
+//             type: 'confirm',
+//             name: '辣',
+//             message: '吃辣吗?',
+//             default: false
+//         }
+//     ])
+//     .then((answers) => {
+//         // Use user feedback for... whatever!!
+//         console.log(answers);
+//     })
+//     .catch((error) => {
+//         if (error.isTtyError) {
+//             // Prompt couldn't be rendered in the current environment
+//         } else {
+//             // Something else went wrong
+//         }
+//     });
+
+
+
 
 // ============================== 以下是chalk =======================================
 // console.log(chalk.red.bold.bgBlue('荆瑞爱前端'));
+
+
 
 
 // ============================== 以下是commander ===================================
